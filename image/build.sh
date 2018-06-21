@@ -1,0 +1,1 @@
+docker build -t adsantos/rally-jupyter-notebook .
