@@ -16,7 +16,17 @@ cd ca-rally-docker
 ./run.sh
 ```
 
-## Build your image
+>Copy/paste this URL into your browser when you connect for the first time, to login with a token:
+http://localhost:8888/?token=**335edcd1eea5e8a0888fd3ff5e7c12b6c187851e08ab5ab1**
+
+## Configuring
+Open notebook and configure it.
+
+<http://localhost:8888/notebooks/work/Rally-username.ipynb>
+
+> Provide the token generated in previously command.
+
+## Build your image [optional]
 
 ### Editing Dockerfile
 
