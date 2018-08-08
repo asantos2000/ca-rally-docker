@@ -1,0 +1,1 @@
+docker exec -it prally python $1 $2 $3 $4 $5

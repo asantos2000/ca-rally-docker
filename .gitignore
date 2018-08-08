@@ -1,3 +1,6 @@
 .DS_Store
 logs
-**/.ipynb*
+misc
+.ipynb_checkpoints
+rally.env
+**/*-k.ipynb
