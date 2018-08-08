@@ -12,41 +12,51 @@ cd ca-rally-docker
 
 ## Running
 
+Before run you'll need to create a `rally.env` file and put it in the same directory of `run.sh` command.
+
+```conf
+RALLY_SERVER=server #rally1.rallydev.com
+RALLY_USER=user
+RALLY_PASSWORD=password
+```
+> rally.env file
+
+and then:
+
 ```bash
 ./run.sh
 ```
 
->Copy/paste this URL into your browser when you connect for the first time, to login with a token:
-http://localhost:8888/?token=**335edcd1eea5e8a0888fd3ff5e7c12b6c187851e08ab5ab1**
+To get the URL run `notebook-urls.sh` and copy/paste the URL into your browser
 
-## Configuring
-Open notebook and configure it.
+or try:
 
-<http://localhost:8888/notebooks/work/Rally-username.ipynb>
+```bash
+open-notebook.sh
+```
 
-> Provide the token generated in previously command.
+## Running the notebook
+Open notebook in your favorite browser and run it.
 
-## Build your image [optional]
+<http://localhost:8888/notebooks/work/rally-disable-user.ipynb>
+
+> Don't forget the token.
+
+## Building your image [optional]
 
 ### Editing Dockerfile
 
-> image/Dockerfile
-
 ```Dockerfile
-# Start from a core stack version
 FROM jupyter/minimal-notebook
-# Install in the default python2 environment
-# Add your libraries
+
+WORKDIR /home/jovyan/work
+
+# Add your libraries here
 RUN pip install pyral msgpack msgpack argparse
 ```
+> image/Dockerfile
 
-### Building
-
-> image/buil.sh
-
-```bash
-docker build -t adsantos/rally-jupyter-notebook .
-```
+Run `image/buil.sh`
 
 ## Contributing
 
@@ -55,3 +65,5 @@ Submit pull-requests
 ## License
 
 MIT: <http://rem.mit-license.org>
+
+🍺 Enjoy!!
