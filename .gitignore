@@ -4,3 +4,4 @@ misc
 .ipynb_checkpoints
 rally.env
 **/*-k.ipynb
+.vscode
