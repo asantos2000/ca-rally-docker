@@ -1,1 +1,1 @@
-docker exec -it prally /bin/bash
+docker exec -it prally bash
