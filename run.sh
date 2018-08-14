@@ -9,26 +9,11 @@ else
     echo "Using rally.env file for enviroment variables."
 fi
 
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux
-                VOLUME=`pwd`;;
-    Darwin*)    machine=Mac
-                VOLUME=`pwd`;;
-    CYGWIN*)    machine=Cygwin
-                VOLUME=/`pwd`;;
-    MINGW*)     machine=MinGw
-                VOLUME=/`pwd`;;
-    *)          machine="UNKNOWN:${unameOut}"
-esac
-
-echo "Running on " ${machine}
-
 docker run \
 --name prally \
 --rm \
 -p 8888:8888 \
--v $VOLUME:/home/jovyan/work \
+-v /`pwd`:/home/jovyan/work \
 --env-file ./rally.env \
 adsantos/rally-jupyter-notebook
 
