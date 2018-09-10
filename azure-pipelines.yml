@@ -13,7 +13,7 @@ steps:
 - script: docker build -f image/Dockerfile -t ca-rally-test:latest .
   displayName: 'docker build'
 
-- script: docker push -t ca-rally-test:latest .
+- script: docker push ca-rally-test:latest .
   displayName: 'docker push'
 
 - task: HelmInstaller@0
