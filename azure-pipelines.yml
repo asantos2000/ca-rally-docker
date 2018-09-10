@@ -13,7 +13,6 @@ steps:
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
 
-steps:
 - script: docker push -t $(imageName) .
   displayName: 'docker push'
 
