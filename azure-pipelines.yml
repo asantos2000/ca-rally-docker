@@ -10,10 +10,10 @@ variables:
   imageName: 'your-container-image-name:$(build.buildId)'
 
 steps:
-- script: docker build -f image/Dockerfile -t $(imageName) .
+- script: docker build -f image/Dockerfile -t ca-rally-test:latest .
   displayName: 'docker build'
 
-- script: docker push -t $(imageName) .
+- script: docker push -t ca-rally-test:latest .
   displayName: 'docker push'
 
 - task: HelmInstaller@0
@@ -32,7 +32,7 @@ steps:
   displayName: helm package
   inputs:
     command: package
-    chartPath: 'charts/croc-hunter'
+    chartPath: 'charts/test'
 
 - task: PublishBuildArtifacts@1
   displayName: drop
